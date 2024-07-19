@@ -1,4 +1,3 @@
-// src/DroppableArea.js
 import React from 'react';
 import { Droppable } from 'react-beautiful-dnd';
 import DraggableContainer from './DraggableContainer';

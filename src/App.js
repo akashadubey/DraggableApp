@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import DroppableArea from './DroppableArea';
@@ -20,16 +19,13 @@ const App = () => {
   const onDragEnd = (result) => {
     const { source, destination } = result;
 
-    // If no destination, exit
     if (!destination) {
       return;
     }
 
-    // Determine source and destination areas
     const sourceDroppableId = source.droppableId;
     const destinationDroppableId = destination.droppableId;
 
-    // Moving within the same area
     if (sourceDroppableId === destinationDroppableId) {
       const items = sourceDroppableId === 'droppable-area-1' ? itemsArea1 : itemsArea2;
       const setItems = sourceDroppableId === 'droppable-area-1' ? setItemsArea1 : setItemsArea2;
@@ -40,7 +36,6 @@ const App = () => {
 
       setItems(reorderedItems);
     } else {
-      // Moving between different areas
       const sourceItems = sourceDroppableId === 'droppable-area-1' ? itemsArea1 : itemsArea2;
       const setSourceItems = sourceDroppableId === 'droppable-area-1' ? setItemsArea1 : setItemsArea2;
 
